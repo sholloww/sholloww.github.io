@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mirabelle Holloway — fun projects</title>
+  <meta name="description" content="Personal art and design projects by Mirabelle Holloway.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="banner" aria-hidden="true">
+    <div class="marquee">✿ mirabelle holloway ✿ ux design ✿ visual art ✿ mirabelle holloway ✿ ux design ✿ visual art ✿</div>
+  </div>
+
+  <nav>
+    <a href="index.html">about me</a>
+    <a href="academic.html">academic projects</a>
+    <a href="fun.html" aria-current="page">fun projects</a>
+  </nav>
+
+  <main>
+    <div class="grid">
+
+      <!-- Placeholder cards: copy the structure from academic.html for real ones.
+           Art and illustration cards often work best with a big image and a short caption. -->
+      <button class="card" data-dialog="fun1">
+        <div class="post-header">fun project 1</div>
+        <div class="post-body">
+          <h3>[title]</h3>
+          <div class="placeholder">artwork / image</div>
+          <p class="fact"><b>date:</b> [month year]</p>
+          <p class="fact"><b>medium:</b> [e.g. digital illustration]</p>
+          <hr class="dots">
+          <p class="tags">#art #illustration</p>
+        </div>
+      </button>
+
+    </div>
+  </main>
+
+  <dialog id="fun1" aria-label="fun project 1">
+    <div class="dialog-header">
+      <span>fun project 1</span>
+      <button class="close" data-close aria-label="Close">×</button>
+    </div>
+    <div class="dialog-body">
+      <h2>[title]</h2>
+      <p class="summary">[one sentence about the piece]</p>
+      <div class="placeholder">full-size image</div>
+      <p>[a few sentences: what inspired it, how you made it]</p>
+    </div>
+  </dialog>
+
+  <footer>© 2026 mirabelle holloway</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

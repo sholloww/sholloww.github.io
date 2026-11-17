@@ -1,0 +1,310 @@
+/* ============================================
+   Mirabelle's portfolio — shared styles
+   Edit the colors in :root to re-theme the whole site.
+   ============================================ */
+
+:root {
+  --pink: #f2e4e4;
+  --sage: #e2e5d8;
+  --rose: #b5667a;
+  --text: #4a3f3a;
+  --text-soft: #a8a3a0;
+  --card: #ffffff;
+  --line: #e6e2e0;
+  --heading-font: "Cormorant Garamond", Georgia, serif;
+  --body-font: "Figtree", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--sage);
+  color: var(--text);
+  font-family: var(--body-font);
+  line-height: 1.55;
+}
+
+/* ---------- top banner (pink dotted band with scrolling text) ---------- */
+.banner {
+  background-color: var(--pink);
+  background-image: radial-gradient(circle, var(--text) 1px, transparent 1.5px);
+  background-size: 64px 40px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 28s linear infinite;
+  font-family: var(--heading-font);
+  font-size: 2.4rem;
+  color: var(--rose);
+  letter-spacing: 0.04em;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* respect people who turn off animations */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; padding-left: 1rem; }
+}
+
+/* ---------- nav ---------- */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 8vw, 6rem);
+  padding: 2rem 1rem 1.5rem;
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  text-decoration: underline;
+}
+
+/* ---------- page layout ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+/* ---------- tumblr-style post card ---------- */
+.post {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.post-header {
+  padding: 0.6rem 1rem;
+  border-bottom: 2px solid var(--line);
+  color: var(--text-soft);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.post-body { padding: 1.1rem 1.25rem 1.4rem; }
+
+.post-body h2 {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin: 0 0 0.8rem;
+}
+
+.post-photos {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.post-photos img,
+.post-photos .placeholder {
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.fact { margin: 0 0 0.9rem; }
+.fact b { display: block; }
+
+.dots {
+  border: none;
+  border-top: 2px dotted var(--text-soft);
+  margin: 1rem 0;
+}
+
+.tags { color: var(--text-soft); font-size: 0.95rem; }
+
+/* stand-in for images until you add your own */
+.placeholder {
+  background: var(--pink);
+  display: grid;
+  place-items: center;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* ---------- about page: pinned post left, bio right ---------- */
+.about {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.bio {
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  max-width: 34em;
+  padding-top: 0.5rem;
+}
+
+.contact-links {
+  margin-top: 2rem;
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+
+.contact-links a { color: var(--rose); margin-right: 1.2rem; }
+
+/* ---------- project grid (masonry, like a tumblr feed) ---------- */
+.grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.card {
+  /* a <button> styled as a post, so it's keyboard + screen-reader friendly */
+  display: block;
+  width: 100%;
+  margin: 0 0 1.5rem;
+  break-inside: avoid;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.card .post-header { font-size: 1.2rem; }
+.card h3 { font-weight: 500; font-size: 1.15rem; margin: 0 0 0.7rem; }
+
+.card img,
+.card .placeholder {
+  width: 100%;
+  margin-bottom: 0.9rem;
+  border: 1px solid var(--line);
+}
+
+.card .placeholder { aspect-ratio: 4 / 3; }
+
+/* ---------- popup (<dialog>) ---------- */
+dialog {
+  width: min(680px, calc(100vw - 2rem));
+  max-height: calc(100vh - 3rem);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  overflow-y: auto;
+}
+
+dialog::backdrop { background: rgba(74, 63, 58, 0.45); }
+
+dialog[open] { animation: pop 0.18s ease-out; }
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card);
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid var(--line);
+  color: var(--text-soft);
+  font-size: 1.3rem;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.close:hover { color: var(--rose); }
+
+.dialog-body { padding: 1.2rem 1.5rem 2rem; }
+
+.dialog-body h2 {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0 0 0.3rem;
+}
+
+.dialog-body h4 {
+  margin: 1.6rem 0 0.3rem;
+  font-size: 1rem;
+}
+
+.dialog-body p { margin: 0 0 0.8rem; }
+
+.dialog-body .summary { font-size: 1.1rem; color: var(--text-soft); }
+
+.dialog-body img,
+.dialog-body .placeholder {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.dialog-body .placeholder { aspect-ratio: 16 / 10; }
+
+/* ---------- footer ---------- */
+footer {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  padding: 2rem 1rem 3rem;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 860px) {
+  .grid { column-count: 2; }
+}
+
+@media (max-width: 700px) {
+  .about { grid-template-columns: 1fr; gap: 2rem; }
+  .bio { font-size: 1.35rem; }
+  nav { font-size: 1.3rem; gap: 1.2rem; }
+}
+
+@media (max-width: 520px) {
+  .grid { column-count: 1; }
+  .marquee { font-size: 1.8rem; }
+}

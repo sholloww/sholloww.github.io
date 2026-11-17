@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mirabelle Holloway — academic projects</title>
+  <meta name="description" content="UX and service design projects by Mirabelle Holloway.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="banner" aria-hidden="true">
+    <div class="marquee">✿ mirabelle holloway ✿ ux design ✿ visual art ✿ mirabelle holloway ✿ ux design ✿ visual art ✿</div>
+  </div>
+
+  <nav>
+    <a href="index.html">about me</a>
+    <a href="academic.html" aria-current="page">academic projects</a>
+    <a href="fun.html">fun projects</a>
+  </nav>
+
+  <main>
+    <div class="grid">
+
+      <!-- ===== PROJECT 1 CARD ===== -->
+      <!-- To add a project: copy a whole card + its matching <dialog> below,
+           then change the data-dialog / id (e.g. "project4") so they match. -->
+      <button class="card" data-dialog="project1">
+        <div class="post-header">project 1</div>
+        <div class="post-body">
+          <h3>apple music homepage rework</h3>
+          <!-- swap for: <img src="images/apple-music.png" alt="Reworked Apple Music home screen"> -->
+          <div class="placeholder">apple music screenshot</div>
+          <p class="fact"><b>date:</b> february 2026</p>
+          <p class="fact"><b>purpose:</b> service design course project</p>
+          <hr class="dots">
+          <p class="tags">#redesign #ui/ux #iconography</p>
+        </div>
+      </button>
+
+      <!-- ===== PROJECT 2 CARD ===== -->
+      <button class="card" data-dialog="project2">
+        <div class="post-header">project 2</div>
+        <div class="post-body">
+          <h3>canvas feature rework</h3>
+          <div class="placeholder">canvas screenshot</div>
+          <p class="fact"><b>date:</b> october 2025</p>
+          <p class="fact"><b>purpose:</b> interaction design course project</p>
+          <hr class="dots">
+          <p class="tags">#redesign #ui/ux #iconography #taskflows #webdev</p>
+        </div>
+      </button>
+
+      <!-- ===== PROJECT 3 CARD ===== -->
+      <button class="card" data-dialog="project3">
+        <div class="post-header">project 3</div>
+        <div class="post-body">
+          <h3>legal form rework</h3>
+          <div class="placeholder">legal form screenshot</div>
+          <p class="fact"><b>date:</b> march 2026</p>
+          <p class="fact"><b>purpose:</b> service design course midterm</p>
+          <hr class="dots">
+          <p class="tags">#redesign #informationarchitecture</p>
+        </div>
+      </button>
+
+    </div>
+  </main>
+
+  <!-- ================= POPUPS ================= -->
+  <!-- Each popup follows the same outline: summary, hero image, quick facts,
+       then problem / process / solution / next steps. Replace the [bracketed]
+       prompts with your own writing. -->
+
+  <dialog id="project1" aria-label="apple music homepage rework">
+    <div class="dialog-header">
+      <span>project 1</span>
+      <button class="close" data-close aria-label="Close">×</button>
+    </div>
+    <div class="dialog-body">
+      <h2>apple music homepage rework</h2>
+      <p class="summary">[one sentence: what you changed, for whom, and why]</p>
+
+      <div class="placeholder">hero image: final design</div>
+
+      <p class="fact"><b>date:</b> february 2026</p>
+      <p class="fact"><b>purpose:</b> service design course project</p>
+      <p class="fact"><b>role:</b> [solo / team of X, what you owned]</p>
+      <p class="fact"><b>tools:</b> [e.g. Figma]</p>
+      <p class="tags">#redesign #ui/ux #iconography</p>
+
+      <h4>the problem</h4>
+      <p>[2–3 sentences: what wasn't working, and for whom]</p>
+
+      <h4>process</h4>
+      <div class="placeholder">sketch / wireframe</div>
+      <p>[caption: what this showed you, what you decided]</p>
+
+      <h4>the solution</h4>
+      <p>[2–3 specific design decisions and the reasoning behind each]</p>
+
+      <h4>what i'd do next</h4>
+      <p>[one or two sentences on what you'd test or improve]</p>
+    </div>
+  </dialog>
+
+  <dialog id="project2" aria-label="canvas feature rework">
+    <div class="dialog-header">
+      <span>project 2</span>
+      <button class="close" data-close aria-label="Close">×</button>
+    </div>
+    <div class="dialog-body">
+      <h2>canvas feature rework</h2>
+      <p class="summary">[one sentence: what you changed, for whom, and why]</p>
+
+      <div class="placeholder">hero image: final design</div>
+
+      <p class="fact"><b>date:</b> october 2025</p>
+      <p class="fact"><b>purpose:</b> interaction design course project</p>
+      <p class="fact"><b>role:</b> [solo / team of X, what you owned]</p>
+      <p class="fact"><b>tools:</b> [e.g. Figma]</p>
+      <p class="tags">#redesign #ui/ux #iconography #taskflows #webdev</p>
+
+      <h4>the problem</h4>
+      <p>[2–3 sentences: what wasn't working, and for whom]</p>
+
+      <h4>process</h4>
+      <div class="placeholder">sketch / wireframe</div>
+      <p>[caption: what this showed you, what you decided]</p>
+
+      <h4>the solution</h4>
+      <p>[2–3 specific design decisions and the reasoning behind each]</p>
+
+      <h4>what i'd do next</h4>
+      <p>[one or two sentences on what you'd test or improve]</p>
+    </div>
+  </dialog>
+
+  <dialog id="project3" aria-label="legal form rework">
+    <div class="dialog-header">
+      <span>project 3</span>
+      <button class="close" data-close aria-label="Close">×</button>
+    </div>
+    <div class="dialog-body">
+      <h2>legal form rework</h2>
+      <p class="summary">[one sentence: what you changed, for whom, and why]</p>
+
+      <div class="placeholder">hero image: final design</div>
+
+      <p class="fact"><b>date:</b> march 2026</p>
+      <p class="fact"><b>purpose:</b> service design course midterm</p>
+      <p class="fact"><b>role:</b> [solo / team of X, what you owned]</p>
+      <p class="fact"><b>tools:</b> [e.g. Figma]</p>
+      <p class="tags">#redesign #informationarchitecture</p>
+
+      <h4>the problem</h4>
+      <p>[2–3 sentences: what wasn't working, and for whom]</p>
+
+      <h4>process</h4>
+      <div class="placeholder">sketch / wireframe</div>
+      <p>[caption: what this showed you, what you decided]</p>
+
+      <h4>the solution</h4>
+      <p>[2–3 specific design decisions and the reasoning behind each]</p>
+
+      <h4>what i'd do next</h4>
+      <p>[one or two sentences on what you'd test or improve]</p>
+    </div>
+  </dialog>
+
+  <footer>© 2026 mirabelle holloway</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
